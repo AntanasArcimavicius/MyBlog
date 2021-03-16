@@ -1,14 +1,6 @@
 version: "3.8"
 
 services:
-    nginx:
-        container_name: ${USER}-mb-nginx
-        build: nginx/
-        depends_on:
-            - web
-        env_file:
-            - .env
-
     web:
         image: ${MB_REGISTRY_URL}dev/mb-web:${MB_WEB_TAG:-latest}
         container_name: ${USER}-mb-web
