@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+    web:
+        container_name: mb-web
+        build:
+            args:
+                - BUILDER=dev-builder
+            target: dev
+        environment:
+            - DJANGO_ALLOW_ASYNC_UNSAFE=1
+    db:
+        container_name: mb-db

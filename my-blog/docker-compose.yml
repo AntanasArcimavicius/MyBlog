@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+    nginx:
+        container_name: ${USER}-mb-nginx
+        build: nginx/
+        depends_on:
+            - web
+        env_file:
+            - .env
+
+    web:
+        image: ${MB_REGISTRY_URL}dev/mb-web:${MB_WEB_TAG:-latest}
+        container_name: ${USER}-mb-web
+        build:
+            context: web/
+            args:
+                - MB_MEDIA_ROOT=${MB_MEDIA_ROOT}
+                - MB_STATIC_ROOT=${MB_STATIC_ROOT}
+        depends_on:
+            - db
+        env_file:
+            - .env
+
+    db:
+        image: db:latest
+        container_name: ${USER}-mb-db
+        build: db/
+        environment:
+            - POSTGRES_DB=${MB_DB_NAME}
+            - POSTGRES_USER=${MB_DB_USER}
+            - POSTGRES_PASSWORD=${MB_DB_PASSWORD}
+            - PGDATA=/var/lib/postgresql/data/pgdata

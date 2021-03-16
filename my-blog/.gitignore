@@ -1,0 +1,8 @@
+*.egg-info
+*.swp
+__pycache__
+db.sqlite3
+docker-compose.override.yml
+tags
+web/venv/
+.DS_Store

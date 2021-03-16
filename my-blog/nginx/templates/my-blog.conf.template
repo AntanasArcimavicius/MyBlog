@@ -1,0 +1,20 @@
+upstream my-blog {
+    server web:${MB_WEB_PORT};
+}
+
+server {
+    listen 80;
+
+    location /nginx/reload {
+        auth_basic 'Access restriction';
+        auth_basic_user_file /tmp/.htpasswd;
+        proxy_pass http://localhost:9000;
+    }
+
+    location / {
+        uwsgi_pass my-blog;
+        include /etc/nginx/uwsgi_params;
+    }
+}
+
+# vim:ft=nginx
