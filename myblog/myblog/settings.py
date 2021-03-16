@@ -6,12 +6,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4z+al1@c1wn5ed7ca^8t^9+@%_!4ig@zlqt(suuvrfe_wsx0-#'
+SECRET_KEY = os.getenv("MB_SECRET_KEY", '4z+al1@c1wn5ed7ca^8t^9+@%_!4ig@zlqt(suuvrfe_wsx0-#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("MB_DEBUG", "").lower() == "true"
 
-ALLOWED_HOSTS = ["arcimavicius.lt", "www.arcimavicius.lt", "89.40.4.72", "127.0.0.1"]
+
+ALLOWED_HOSTS = ["arcimavicius.lt", "www.arcimavicius.lt", "127.0.0.1"]
 
 
 INSTALLED_APPS = [
@@ -102,10 +103,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+STATIC_URL = '/static/static/'
+MEDIA_URL = '/static/media/'
+
+STATIC_ROOT = '/vol/web/static'
+MEDIA_ROOT = '/vol/web/media'
