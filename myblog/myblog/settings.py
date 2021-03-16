@@ -11,7 +11,7 @@ SECRET_KEY = '4z+al1@c1wn5ed7ca^8t^9+@%_!4ig@zlqt(suuvrfe_wsx0-#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["arcimavicius.lt", "www.arcimavicius.lt", "89.40.4.72", "127.0.0.1"]
 
 
 INSTALLED_APPS = [
