@@ -57,7 +57,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "mb.user.apps.UserConfig",
-    "mb.mainsite.apps.MainsiteConfig",
+    "mb.mainsite",
 ]
 
 INSTALLED_APPS = CORE_APPS + LOCAL_APPS + THIRD_PARTY_APPS
