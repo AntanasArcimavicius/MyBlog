@@ -15,7 +15,7 @@ services:
             # Remote dev server host
             #- WEB_HOST=192.168.0.111
         ports:
-            - "${SA_WEB_PORT}:${SA_WEB_PORT}"
+            - "${MB_WEB_PORT}:${MB_WEB_PORT}"
     db:
         volumes:
             - dbdata:/var/lib/postgresql/data/
