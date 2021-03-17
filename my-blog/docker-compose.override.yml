@@ -7,7 +7,7 @@ services:
             target: dev
         volumes:
             - .:/app
-            - media_data:${SA_MEDIA_ROOT}
+            - media_data:${MB_MEDIA_ROOT}
         environment:
             - DJANGO_ALLOW_ASYNC_UNSAFE=1
             - PYTHONUNBUFFERED=1
@@ -25,5 +25,5 @@ volumes:
     dbdata:
         name: ${USER}-mb-dbdata
     media_data:
-        name: ${USER}-sa-media
+        name: ${USER}-mb-media
 
