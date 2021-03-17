@@ -7,6 +7,5 @@ tags
 web/venv/
 .DS_Store
 secret_key.txt
-/.env
-.env
-env
+my-blog/.env
+/my-blog/.env
