@@ -1,3 +1,5 @@
+Code for my personal webpage: www.arcimavicius.lt
+
 This project has been built from cookiecutter template
 
 imports: isort    /  code style: black /
