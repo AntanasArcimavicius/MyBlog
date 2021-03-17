@@ -1,5 +1,6 @@
 This project has been built from cookiecutter template
-imports: isort    /  code style: black
+
+imports: isort    /  code style: black /
 security: bandit /   linter: pylint
 
 
