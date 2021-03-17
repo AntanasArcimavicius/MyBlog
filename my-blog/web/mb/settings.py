@@ -34,7 +34,7 @@ SITE_ID = 1
 HOST = os.getenv("MB_WEB_HOST")
 PORT = os.getenv("MB_WEB_PORT")
 
-ALLOWED_HOSTS = [HOST, "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [HOST, "localhost", "127.0.0.1", "89.40.4.72", "www.arcimavicius.lt", "arcimavicius.lt"]
 
 # Application definition
 
