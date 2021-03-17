@@ -21,10 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv(
-    "MB_SECRET_KEY",
-    "&x*il!n)l9v$1f8j431y9un#^8-r0ix3!(v@2n5ku4lb143u^*",
-)
+with open(os.path.join(BASE_DIR, "secret_key.txt")) as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("MB_DEBUG", "").lower() == "true"
@@ -34,7 +32,7 @@ SITE_ID = 1
 HOST = os.getenv("MB_WEB_HOST")
 PORT = os.getenv("MB_WEB_PORT")
 
-ALLOWED_HOSTS = [HOST, "localhost", "127.0.0.1", "89.40.4.72", "www.arcimavicius.lt", "arcimavicius.lt"]
+ALLOWED_HOSTS = [HOST, "localhost", "127.0.0.1", "www.arcimavicius.lt", "arcimavicius.lt"]
 
 # Application definition
 
@@ -126,9 +124,7 @@ DATABASES = {
     },
 }
 
-DATABASES["default"] = DATABASES[
-    os.getenv("MB_WEB_DEFAULT_DB", "postgres")
-]
+DATABASES["default"] = DATABASES[os.getenv("MB_WEB_DEFAULT_DB", "postgres")]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -144,17 +140,13 @@ if os.getenv("MB_EMAIL_HOST"):
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-DEFAULT_FROM_EMAIL = os.getenv(
-    "MB_DEFAULT_FROM_EMAIL", "webmaster@localhost"
-)
+DEFAULT_FROM_EMAIL = os.getenv("MB_DEFAULT_FROM_EMAIL", "webmaster@localhost")
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
@@ -170,12 +162,7 @@ AUTHENTICATION_BACKENDS = [
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "formatters": {
-        "verbose": {
-            "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
-        }
-    },
+    "formatters": {"verbose": {"format": "%(levelname)s %(asctime)s %(module)s " "%(process)d %(thread)d %(message)s"}},
     "handlers": {
         "console": {
             "level": "DEBUG",

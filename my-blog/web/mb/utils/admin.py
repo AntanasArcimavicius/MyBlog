@@ -1,4 +1,5 @@
 from django.contrib.admin import SimpleListFilter
+
 from mb.user.models import User
 
 
