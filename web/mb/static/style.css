@@ -1,19 +1,20 @@
 @import "reset.css";
 
 /* =========================================================
-   BASE STYLES V
+   BASE STYLES
 ========================================================= */
 
 body {
+   background-image: url('img/Futuristic.jpg');
    font-family: monospace, 'Times New Roman', Times, serif;
    background-size: cover !important;
    background-position: top center !important;
    background-repeat: no-repeat !important;
-   background-attachment: fixed;
+   /* background-attachment: fixed; */
 }
 
 .container {
-   max-width: 760px;
+   max-width: 1000px;
    margin: auto;
 }
 
@@ -104,4 +105,56 @@ footer {
       display: flex;
       text-align: left;
     }
+ }
+
+/* =========================================================
+   SHAPES
+========================================================= */
+
+.shapes {
+   display: flex;
+   margin-top: 10px;
+   height: 100vh;
+   justify-content: space-between;
+}
+
+.left {
+   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+   width: 40%;
+   height: 100%;
+}
+
+.left:hover {
+   background: #d41d1d1a;
+   cursor: pointer;
+}
+
+.right {
+   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+   width: 40%;
+   height: 100%;
+}
+
+.right:hover {
+   background: #0000ff18;
+   cursor: pointer;
+}
+
+.center {
+   position: absolute;
+   top: 20%;
+   left: 32%;
+   width: 35%;
+   text-align: center;
+   font-size: 18px;
+   color: #B4DCE3;
+ }
+
+ .center h1{
+   font-size: 1.5em;
+   font-weight: bold;
+ }
+
+ .center p {
+    margin: 25px;
  }
