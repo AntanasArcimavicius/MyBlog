@@ -6,10 +6,10 @@
 
 body {
    font-family: monospace, 'Times New Roman', Times, serif;
-   display: block;
-   background-color: #B4DCE3;
-   height: 100%;
-   width: 100%;
+   background-size: cover !important;
+   background-position: top center !important;
+   background-repeat: no-repeat !important;
+   background-attachment: fixed;
 }
 
 .container {
@@ -19,29 +19,34 @@ body {
 
 footer {
    font-size: 12px;
-   margin-top: 30px;
-   color: #142224;
+   color: #B4DCE3;
    text-align: center;
-   margin: 25px auto;
    padding: 10px;
-   border-top: 1px solid #142224;
-   width: 80%;
+   border-top: 0.5px solid #B4DCE3;
+   max-width: 960px;
+   margin: 30px auto;
 }
 
 .header {
    color: #B4DCE3;
    line-height: 50px;
-   background-color: #142224;
 }
 
 .navbar {
    overflow: hidden;
    font-family: system-ui;
    padding: 10px;
+   max-width: 960px;
+   margin: auto;
 }
 
 .navbar-right {
+   display: flex;
    float: right;
+}
+
+.navbar-right a {
+   display: inline-flex;
 }
 
 .navbar a {
@@ -59,15 +64,15 @@ footer {
    color: #4FB6BE;
    border-radius: 6px;
    border-bottom: 2px solid #9ecaed;
+   cursor: pointer;
  }
 
- .navbar a.active {
-   background-color: #2f434683;
-   color: #4FB6BE;
-   border-radius: 6px;
-   border-bottom: 2px solid #9ecaed;
-   box-shadow: 0 0 5px #9ecaed;
-   
+ .navbar .navbar-brand img {
+   height: 55px;
+}
+
+ .navbar .navbar-brand:hover {
+    border: 0;
  }
 
  .navbar .icon {
@@ -94,4 +99,9 @@ footer {
      display: block;
      text-align: left;
    }
+   .navbar.responsive .navbar-right {
+      float: left;
+      display: flex;
+      text-align: left;
+    }
  }
