@@ -1,0 +1,27 @@
+<div class="email-modal">
+    <div class="modal-content">
+        <div class="close">+</div>
+            <h4>WRITE AN EMAIL</h4>
+            <p>You can leave a comment or contact me from here</p>
+
+        <form method="post">
+            {{ csrf_input }}
+            <label for="{{ form.from_email.id_for_label }}">{{form.from_email.label}}:</label>
+                {{ form.from_email }}
+            <label for="{{ form.subject.id_for_label }}">{{form.subject.label}}:</label>
+                {{ form.subject }}
+                {{ form.message }}
+            <input class="button-primary" type="submit" name="send" value="Send">
+        </form>
+    </div>
+</div>
+
+<script>
+    document.querySelector(".open-email").addEventListener("click", function() {
+        document.querySelector(".email-modal").style.display = "flex";
+    });
+
+    document.querySelector(".close").addEventListener("click", function() {
+        document.querySelector(".email-modal").style.display = "none";
+    });
+</script>
