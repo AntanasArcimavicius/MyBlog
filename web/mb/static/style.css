@@ -5,12 +5,12 @@
 ========================================================= */
 
 body {
-   background-image: url('img/Futuristic.jpg');
+   background-image: url('img/pexels-junior-2.jpg');
    font-family: monospace, 'Times New Roman', Times, serif;
    background-size: cover !important;
    background-position: top center !important;
    background-repeat: no-repeat !important;
-   /* background-attachment: fixed; */
+   background-attachment: fixed;
 }
 
 .container {
@@ -71,6 +71,10 @@ footer {
    font-size: 17px;
  }
 
+ .navbar.responsive a {
+   height: 40px;
+ }
+
  .navbar a:hover {
    background-color: #2f434683;
    color: #4FB6BE;
@@ -92,9 +96,9 @@ footer {
  }
 
  .button-primary {
-   background-color: #2FE7BE;
+   background-color: #B4DCE3;
    border: 0;
-   margin-top: 20px;
+   margin-top: 10px;
    cursor: pointer;
    height: 50px;
    font-size: 1em;
@@ -138,41 +142,19 @@ footer {
  }
 
 /* =========================================================
-   SHAPES
+      HOME
 ========================================================= */
 
 .container {
    display: flex;
    margin-top: 10px;
-   height: 100vh;
+   height: 80vh;
    justify-content: space-between;
-}
-
-.left {
-   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-   width: 40%;
-   height: 100%;
-}
-
-.left:hover {
-   background: #d41d1d1a;
-   cursor: pointer;
-}
-
-.right {
-   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-   width: 40%;
-   height: 100%;
-}
-
-.right:hover {
-   background: #0000ff18;
-   cursor: pointer;
 }
 
 .center {
    position: absolute;
-   top: 30%;
+   top: 18%;
    left: 15%;
    width: 70%;
    text-align: center;
@@ -233,7 +215,7 @@ footer {
 .modal-content {
    width: 500px;
    height: 380px;
-   background-color: #2B2F3E;
+   background-color: #3d3f46b0;
    color: white;
    text-align: center;
    padding: 40px;
@@ -242,7 +224,7 @@ footer {
 }
 
 .modal-content h4 {
-   color: #2FE7BE;
+   color: #B4DCE3;
    text-align: center;
    font-weight: 500;
    font-size: 1.25em;
@@ -252,33 +234,24 @@ footer {
    box-sizing: border-box;
    height: 200px;
    width: 90%;
-   margin-top: 10px;
+   border-radius: 4px;
+   margin-top: 15px;
 }
 
 .email-modal p {
    font-family: sans-serif;
-   margin: 10px 0;
+   margin: 20px 0;
    color: #757575;
    font-size: 0.9em;
    font-style: italic;
 }
 
-.email-modal label {
-   font-family: sans-serif;
-   float: left;
-   margin-left: 25px;
-}
-
-.email-modal input[type='email'] {
-   width: 65%;
-   margin-bottom: 5px;
-   margin-left: 5px;
-}
-
-.email-modal input[type='text'] {
-   width: 70%;
-   float: right;
-   margin-right: 25px;
+form input {
+   border-radius: 4px;
+   min-height: 30px;
+   min-width: 44%;
+   box-sizing: border-box;
+   text-indent: 10px;
 }
 
 .close {

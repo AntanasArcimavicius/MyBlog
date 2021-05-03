@@ -15,12 +15,19 @@
 </div>
 
 <script>
+    const nav = document.querySelector("#myNav");
+
     function OpenNav() {
-        const nav = document.querySelector("#myNav");
         if (nav.className === "navbar") {
             nav.className += " responsive";
         } else {
             nav.className = "navbar";
         }
     }
+
+    document.body.addEventListener("click", function(event) {
+        if (!nav.contains(event.target)) {
+            nav.className = "navbar";
+        }
+    } );
 </script>
