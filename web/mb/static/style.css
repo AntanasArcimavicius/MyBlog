@@ -178,6 +178,21 @@ footer {
     margin: 25px;
  }
 
+ .bottom {
+   position: absolute;
+   top: 71%;
+   left: 15%;
+   width: 70%;
+   text-align: center;
+   font-size: 18px;
+   color: #B4DCE3;
+ }
+
+ .bottom i {
+   margin-top: 5px;
+   color: #000000;
+ }
+
 
 /* =========================================================
    MODAL POPUP

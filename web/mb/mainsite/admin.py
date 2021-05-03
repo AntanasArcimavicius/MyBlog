@@ -12,14 +12,14 @@ class SkillInline(admin.TabularInline):
         return 0
 
 
-class WorkExperienceInline(admin.TabularInline):
+class WorkExperienceInline(admin.StackedInline):
     model = WorkExperience
 
     def get_extra(self, request, obj=None, **kwargs):
         return 0
 
 
-class EducationInline(admin.TabularInline):
+class EducationInline(admin.StackedInline):
     model = Education
 
     def get_extra(self, request, obj=None, **kwargs):

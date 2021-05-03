@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 
 from .forms import ContactForm
+from .models import Resume
 
 
 class HomeView(TemplateView):
@@ -34,3 +35,8 @@ class PortfolioView(HomeView):
 
 class AboutView(HomeView):
     template_name = "about.html"
+
+    def get(self, request):
+        form = ContactForm()
+        resume = Resume.objects.first()
+        return render(request, self.template_name, {"resume": resume, "form": form})
