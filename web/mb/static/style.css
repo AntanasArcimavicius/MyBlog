@@ -178,30 +178,6 @@ footer {
     margin: 25px;
  }
 
- @keyframes nav-load {
-    0% {
-      transform: translateY(-100%);
-    }
-
-    100% {
-      transform: translateY(0);
-    }
- }
-
- @keyframes content-load {
-   0% {
-     /* transform: translateX(-20px); */
-     width: 0;
-     opacity: 0;
-   }
-
-   100% {
-     /* transform: translateX(0); */
-     width: 70%;
-     opacity: 1;
-   }
-}
-
 
 /* =========================================================
    MODAL POPUP
