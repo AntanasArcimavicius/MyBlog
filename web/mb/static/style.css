@@ -50,6 +50,7 @@ footer {
    max-width: 960px;
    margin: auto;
    animation: nav-load 300ms ease-in;
+   position: relative;
 }
 
 .navbar-right {
@@ -89,6 +90,12 @@ footer {
 
  .navbar .navbar-brand:hover {
     border: 0;
+ }
+
+ .navbar-brand i{
+   position: absolute;
+   left: 10px;
+   top: 28px;
  }
 
  .navbar .icon {

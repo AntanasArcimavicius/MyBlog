@@ -1,8 +1,11 @@
 <div class="header">
     <div class="navbar" id="myNav">
-        <a class="navbar-brand" href="{{reverse('mainsite:home')}}"><img src="{{ static('img/mylogo.png') }}" alt="mylogo"></a>
-        <a href="{{reverse('mainsite:home')}}" class="active"><i class="fas fa-home"></i> Home</a>
-        <a href="#news">News</a>
+        <a class="navbar-brand" href="{{reverse('mainsite:home')}}">
+            <i class="fas fa-home"></i>
+            <img src="{{ static('img/mylogo.png') }}" alt="mylogo">
+        </a>
+        <a href="{{reverse('mainsite:home')}}" class="active">Portfolio</a>
+        <a href="#about">About</a>
         <a href="javascript:void(0);" class="icon" onclick="OpenNav()">
             <i class="fa fa-bars"></i>
         </a>

@@ -26,3 +26,11 @@ class HomeView(TemplateView):
             return redirect("success")
 
         return render(request, self.template_name, {"form": form})
+
+
+class PortfolioView(HomeView):
+    template_name = "portfolio.html"
+
+
+class AboutView(HomeView):
+    template_name = "about.html"
