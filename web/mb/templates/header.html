@@ -1,18 +1,22 @@
 <div class="header">
     <div class="navbar" id="myNav">
-        <a class="navbar-brand" href="{{reverse('mainsite:home')}}">
-            <i class="fas fa-home"></i>
-            <img src="{{ static('img/mylogo.png') }}" alt="mylogo">
-        </a>
-        <a href="{{reverse('mainsite:portfolio')}}" class="active">Portfolio</a>
-        <a href="{{reverse('mainsite:about')}}">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="OpenNav()">
-            <i class="fa fa-bars"></i>
-        </a>
-        <div class="navbar-right">
-            <a href="https://www.linkedin.com/in/antanas-arcimavičius-4100891a4"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/Anton.Antonovich.Antonovskyj/"><i class="fab fa-facebook-square"></i></a>
-            <a class="open-email"><i class="fas fa-envelope-open-text"></i></a>
+        <div class="nav-top">
+            <a class="navbar-brand" id="logo" href="{{reverse('mainsite:home')}}">
+                <i class="fas fa-home"></i>
+                <img src="{{ static('img/mylogo.png') }}" alt="mylogo">
+            </a>
+            <a href="javascript:void(0);" class="burger-icon" id="burger" onclick="OpenNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="{{reverse('mainsite:portfolio')}}" class="active">Portfolio</a>
+            <a href="{{reverse('mainsite:about')}}">About</a>
+            <div class="navbar-right">
+                <a href="https://www.linkedin.com/in/antanas-arcimavičius-4100891a4"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/Anton.Antonovich.Antonovskyj/"><i class="fab fa-facebook-square"></i></a>
+                <a class="open-email"><i class="fas fa-envelope-open-text"></i></a>
+            </div>
         </div>
     </div>
 </div>
@@ -21,11 +25,7 @@
     const nav = document.querySelector("#myNav");
 
     function OpenNav() {
-        if (nav.className === "navbar") {
-            nav.className += " responsive";
-        } else {
-            nav.className = "navbar";
-        }
+        nav.classList.toggle("opened");
     }
 
     document.body.addEventListener("click", function(event) {
