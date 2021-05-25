@@ -269,3 +269,8 @@ form input {
    filter: blur(2px);
 }
 
+.message-container {
+   text-align: center;
+   color: #4caf50;
+}
+

@@ -1,6 +1,8 @@
-from django.core.mail import BadHeaderError, send_mail
-from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.core.mail import send_mail
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import TemplateView
 
 from .forms import ContactForm
@@ -15,18 +17,18 @@ class HomeView(TemplateView):
         return render(request, self.template_name, {"form": form})
 
     def post(self, request):
-        form = self.form_class(request.POST)
+        form = ContactForm(request.POST)
+        print(form.errors)
         if form.is_valid():
             subject = form.cleaned_data["subject"]
             from_email = form.cleaned_data["from_email"]
             message = form.cleaned_data["message"]
-            try:
-                send_mail(subject, message, from_email, ["arcimavic@gmail.com"])
-            except BadHeaderError:
-                return HttpResponse("Invalid header found.")
-            return redirect("success")
+            send_mail(f'{subject} from {from_email}', message, from_email, ["arcimavic@gmail.com"])
+            messages.success(request, "Message sent successfully",)
 
-        return render(request, self.template_name, {"form": form})
+            return HttpResponseRedirect(reverse("mainsite:home",))
+
+        return render(request, self.template_name, {"form": form})    
 
 
 class PortfolioView(HomeView):

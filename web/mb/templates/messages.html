@@ -1,0 +1,12 @@
+{% if messages %}
+    {% for message in messages %}
+        <div class="pop-up-message
+            {% if message.tags == "success" or message.tags == "info" %} pop-up-message-success
+            {% else %} pop-up-message-error {% endif %}">
+            <div class="message-container">
+                <span>&#10004;</span>
+                <span>{{ message }}</span>
+            </div>
+        </div>    
+    {% endfor %}
+{% endif %}

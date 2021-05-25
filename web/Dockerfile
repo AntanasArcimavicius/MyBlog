@@ -59,7 +59,12 @@ RUN apt-get -y update \
     sqlite3 libsqlite3-dev \
     make \
     vim \
+    postfix \
     shared-mime-info
+
+
+#COPY main.cf /etc/postfix/
+#RUN service postfix restart
 
 #####################
 # Stage: requirements

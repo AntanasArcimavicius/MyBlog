@@ -16,6 +16,10 @@
     <body>
         {% include "header.html" %}
 
+        {% if messages %}
+            {% include "messages.html" %}
+        {% endif %}
+
         {% block content %}
         {% endblock %}
 

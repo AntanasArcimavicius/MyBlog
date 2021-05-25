@@ -137,6 +137,7 @@ if os.getenv("MB_EMAIL_HOST"):
     EMAIL_HOST_PASSWORD = os.getenv("MB_EMAIL_HOST_PASSWORD")
     EMAIL_PORT = os.getenv("MB_EMAIL_PORT")
     EMAIL_USE_TLS = True
+    EMAIL_USE_SSL = False
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
