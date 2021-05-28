@@ -23,9 +23,11 @@
 
 <script>
     const nav = document.querySelector("#myNav");
+    const navTop = document.querySelector(".nav-top")
 
     function OpenNav() {
         nav.classList.toggle("opened");
+        navTop.classList.toggle("clearfix")
     }
 
     document.body.addEventListener("click", function(event) {

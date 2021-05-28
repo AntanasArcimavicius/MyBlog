@@ -43,6 +43,10 @@ footer {
    line-height: 50px;
 }
 
+.clearfix {
+   overflow: auto;
+}
+
 .navbar {
    overflow: hidden;
    font-family: system-ui;
@@ -120,40 +124,6 @@ a.burger-icon {
    border: 1px solid rgba(0,0,0,0.8);
    color: rgba(0,0,0,0.8); 
 }
-
- @media screen and (max-width: 600px) {
-   .navbar a {display: none;}
-
-   #burger {
-      float: right;
-      display: block;
-   }
-
-   #logo {
-      float: left;
-      display: block;
-   }
-
-   .navbar.opened .dropdown,
-   .navbar.opened .dropdown a {
-      display: block;
-   }
-  
-   .navbar.opened a {
-     float: none;
-     display: block;
-     text-align: left;
-   }
-   .navbar.opened .navbar-right {
-      float: left;
-      display: flex;
-      text-align: left;
-    }
- }
-
- .clearfix {
-   overflow: auto;
- }
 
 /* =========================================================
       HOME
@@ -280,4 +250,50 @@ form input {
    text-align: center;
    color: #4caf50;
 }
+
+/* =========================================================
+   MEDIA Q
+========================================================= */
+
+@media screen and (max-width: 600px) {
+   .center {
+      top: 10%;
+   }
+
+   .navbar a {display: none;}
+
+   #burger {
+      float: right;
+      display: block;
+   }
+
+   #logo {
+      float: left;
+      display: block;
+   }
+
+   .header {
+      height: 200px;
+   }
+
+   .navbar.opened {
+      height: 100%;
+   }
+
+   .navbar.opened .dropdown,
+   .navbar.opened .dropdown a {
+      display: block;
+   }
+  
+   .navbar.opened a {
+     float: none;
+     display: block;
+     text-align: left;
+   }
+   .navbar.opened .navbar-right {
+      float: left;
+      display: flex;
+      text-align: left;
+   }
+ }
 
