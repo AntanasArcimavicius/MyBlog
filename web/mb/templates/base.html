@@ -24,9 +24,8 @@
         {% endblock %}
 
         {% include "email_form.html" %}
-
-        {% include "footer.html" %}
     </body>
     {% block javascript %}
+        <script src="{{ static('js/functions.js') }}"></script>
     {% endblock %}
 </html>
