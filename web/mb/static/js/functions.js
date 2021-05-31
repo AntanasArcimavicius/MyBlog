@@ -10,6 +10,7 @@ function openNav() {
 
 function scrollToAbout() {
     aboutSection.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    nav.className = "navbar";
 }
 
 body.addEventListener("click", function(event) {
