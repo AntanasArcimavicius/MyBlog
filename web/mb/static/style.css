@@ -58,6 +58,7 @@ footer {
 }
 
 .navbar {
+   height: 50px;
    overflow: hidden;
    font-family: system-ui;
    padding: 10px;
@@ -65,6 +66,7 @@ footer {
    margin: auto;
    animation: nav-load 300ms ease-in;
    position: relative;
+   border-bottom: #c9f8ff57 solid 1px;
 }
 
 .navbar-right {
@@ -130,7 +132,7 @@ a.burger-icon {
 
 .button-primary:hover,
 .button-primary:active { 
-   background-color: #FFFFFF; 
+   background-color: #ffffff9d; 
    border: 1px solid rgba(0,0,0,0.8);
    color: rgba(0,0,0,0.8); 
 }
@@ -156,6 +158,7 @@ a.burger-icon {
 
  .center p {
     margin: 25px;
+    color: #eee;
  }
 
  .bottom {
@@ -262,12 +265,12 @@ form input {
    min-height: 100vh;
    background-color: #242526;
    color: white;
-   font-family: sans-serif;
+   font-family: Arial, sans-serif;
    text-align: center;
 }
 
 .content {
-   max-width: 1000px;
+   max-width: 870px;
    padding-top: 100px;
    margin: auto;
 }
@@ -276,23 +279,34 @@ form input {
    position: relative;
    margin: 10px auto;
    display: inline-block;
-   width: 150px;
-   height: 150px;
+   width: 300px;
+   height: 300px;
    border-radius: 50%;
    object-fit: cover;
    border: #242526 solid 3px;
 }
 
 .about-section h1 {
-   font-size: 3rem;
+   font-size: 2.5rem;
+   font-weight: 600;
    padding-bottom: 20px;
    color: #B4DCE3;
 }
 
 .about-section h4 {
    padding-bottom: 10px;
+   width: 80%;
+   margin: auto;
+   font-weight: 600;
    color: #B4DCE3;
    font-size: 1.5rem;
+   border-bottom: #c9f8ff57 solid 1px;
+}
+
+.about-text {
+   margin: auto;
+   margin-top: 20px;
+   width: 80%;
 }
 
 .linked-in {
@@ -304,10 +318,16 @@ form input {
    align-items: center;
    justify-content: center;
    margin-top: 20px;
+   background-color: #17a2b86b;
 }
 
 .linked-in a {
    text-decoration: none;
+   color: white;
+}
+
+#portfolio-link {
+   text-decoration: line-through;
 }
 
 
@@ -322,10 +342,6 @@ form input {
    }
 
    .about-section {
-      font-size: 14px;
-   }
-
-   .about-section h1{
       font-size: 14px;
    }
 
@@ -351,6 +367,10 @@ form input {
 
    .header {
       height: 200px;
+   }
+
+   .nav-top {
+      overflow: auto;
    }
 
    .navbar.opened {
@@ -384,6 +404,24 @@ form input {
 
    .linked-in {
       width: 80%;
+   }
+
+   .content {
+      padding-top: 50px;
+   }
+
+   .about-section h1 {
+      padding-bottom: 10px;
+   }
+
+   .about-text {
+      width: 90%;
+      margin: 20px auto;
+   }
+
+   .about-section img {
+      width: 150px;
+      height: 150px;
    }
  }
 
