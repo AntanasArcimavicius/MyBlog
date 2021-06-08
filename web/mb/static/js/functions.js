@@ -1,12 +1,13 @@
 const nav = document.querySelector("#myNav");
-const navTop = document.querySelector(".nav-top")
-const aboutSection = document.querySelector(".about-section")
-const email_modal = document.querySelector(".email-modal")
-const profile_img = document.querySelector("#profile-photo")
+const navTop = document.querySelector(".nav-top");
+const aboutSection = document.querySelector(".about-section");
+const emailModal = document.querySelector(".email-modal");
+const profileImg = document.querySelector("#profile-photo");
+const closeButton = document.querySelector(".close");
 
 function openNav() {
     nav.classList.toggle("opened");
-    navTop.classList.toggle("clearfix")
+    navTop.classList.toggle("clearfix");
 }
 
 function scrollToAbout() {
@@ -21,12 +22,15 @@ document.body.addEventListener("click", function(event) {
 } );
 
 document.querySelector(".open-email").addEventListener("click", function() {
-    email_modal.style.display = "flex";
-    profile_img.style.display = "none";
+    emailModal.style.display = "flex";
+    profileImg.style.display = "none";
     nav.className = "navbar";
+    closeButton.style.zIndex = 30;
+    console.log("working")
 });
 
-document.querySelector(".close").addEventListener("click", function() {
-    email_modal.style.display = "none";
-    profile_img.style.display = "inline-block";
+closeButton.addEventListener("click", function() {
+    emailModal.style.display = "none";
+    profileImg.style.display = "inline-block";
+    closeButton.style.zIndex = 0;
 });
