@@ -338,7 +338,7 @@ form input {
 @media screen and (max-width: 600px) {
 
    .container {
-      height: 70vh;
+      height: 75vh;
    }
 
    .about-section {
@@ -402,12 +402,18 @@ form input {
       margin-top: 7px;
    }
 
+   .open-email {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+   }
+
    .linked-in {
       width: 80%;
    }
 
    .content {
-      padding-top: 50px;
+      padding-top: 100px;
    }
 
    .about-section h1 {
